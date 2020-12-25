@@ -1,3 +1,13 @@
+/*SVG Animation*/
+
+svg path,
+svg rect {
+    fill: black;
+}
+
+
+/*Animaciones*/
+
 :root {
     --animate-duration: 5s;
 }
