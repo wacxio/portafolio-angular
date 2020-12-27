@@ -23,6 +23,7 @@ export class InfoPaginaService {
 
    }
 
+   // tslint:disable-next-line: typedef
    private cargarInfo() {
      // Leer el archivo JSON
      this.http.get('assets/data/data-pagina.json')
@@ -32,6 +33,7 @@ export class InfoPaginaService {
       });
    }
 
+   // tslint:disable-next-line: typedef
    private cargarEquipo(){
     // Leer el archivo JSON
     this.http.get('https://curso-angular-html-a0169-default-rtdb.firebaseio.com/equipo.json')
