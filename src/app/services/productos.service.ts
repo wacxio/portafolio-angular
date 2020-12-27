@@ -21,7 +21,7 @@ export class ProductosService {
   // tslint:disable-next-line: typedef
   private cargarProductos(){
 
-    return new Promise((resolve, reject) => {
+    return new Promise<void>((resolve, reject) => {
       this.http.get('https://curso-angular-html-a0169-default-rtdb.firebaseio.com/productos_idx.json')
     // .subscribe( (resp: Producto[]) => {
     .subscribe( (resp: any) => {
@@ -38,6 +38,7 @@ export class ProductosService {
     return this.http.get(`https://curso-angular-html-a0169-default-rtdb.firebaseio.com/productos/${ id }.json`);
   }
 
+  // tslint:disable-next-line: typedef
   buscarProducto( termino: string ){
 
     if (this.productos.length === 0){
@@ -54,6 +55,7 @@ export class ProductosService {
 
   }
 
+  // tslint:disable-next-line: typedef
   private filtrarProductos( termino: string ){
     // this.productosFiltrado = this.productos.filter(producto => {
     //   return true;

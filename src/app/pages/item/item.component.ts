@@ -10,8 +10,8 @@ import { ProductoDescripcion } from '../../interfaces/producto-descripcion.inter
 })
 export class ItemComponent implements OnInit {
 
-producto: ProductoDescripcion;
-id: string;
+producto: ProductoDescripcion | undefined;
+id: string | undefined;
 
 
   constructor( private route: ActivatedRoute, public productosService: ProductosService) { }
@@ -22,8 +22,10 @@ id: string;
     this.route.params
       .subscribe( parametros => {
       // console.log(parametros['id']);
+        // tslint:disable-next-line: no-string-literal
         this.productosService.getProducto(parametros['id'])
-          .subscribe( (producto: ProductoDescripcion) => {
+          .subscribe( (producto: any) => {
+            // tslint:disable-next-line: no-string-literal
             this.id = parametros['id'];
             this.producto = producto;
           });
